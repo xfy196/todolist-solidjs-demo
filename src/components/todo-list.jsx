@@ -31,8 +31,13 @@ function TodoList() {
     );
   };
   const handleClick = () => {
+    console.log("click")
     localStorage.setItem("todolist-solidjs", JSON.stringify(getList()));
   };
+  const handleDbClick = () => {
+    console.log("dbclick")
+    localStorage.setItem("todolist-solidjs", JSON.stringify(getList()));
+  }
   return (
     <div>
       <input
@@ -42,7 +47,7 @@ function TodoList() {
         placeholder="请输入内容"
       />
       <button onClick={handleClick}>本地点击保存</button>
-      <button onDoubleClick={handleClick}>本地双击保存</button>
+      <button onDoubleClick={handleDbClick}>本地双击保存</button>
       <For each={getList()}>
         {(item) => <TodoItem updateList={updateList} data={item} />}
       </For>
