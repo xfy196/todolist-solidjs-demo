@@ -47,7 +47,7 @@ function TodoList() {
         placeholder="请输入内容"
       />
       <button onClick={handleClick}>本地点击保存</button>
-      <button onDoubleClick={handleDbClick}>本地双击保存</button>
+      <button onDblClick={handleDbClick}>本地双击保存</button>
       <For each={getList()}>
         {(item) => <TodoItem updateList={updateList} data={item} />}
       </For>
